@@ -3,6 +3,7 @@
 namespace ArinaSystems\TelrLaravelPayment\Traits;
 
 use ArinaSystems\TelrLaravelPayment\Facades\Telr;
+use ArinaSystems\TelrLaravelPayment\Models\Transaction;
 
 trait Payable
 {
@@ -13,7 +14,7 @@ trait Payable
      */
     public function transactions()
     {
-        return $this->morphMany(config('telr-payment.model'), 'payable');
+        return $this->morphMany(Transaction::class, 'payable');
     }
 
     /**
