@@ -5,6 +5,12 @@ namespace ArinaSystems\TelrLaravelPayment;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Support\Arrayable;
 
+/**
+ * Telr Response
+ *
+ * @property \stdClass $order
+ * @property \stdClass|null $error
+ */
 class TelrResponse extends Repository implements Arrayable
 {
     /**

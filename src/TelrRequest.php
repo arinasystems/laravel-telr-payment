@@ -9,6 +9,32 @@ use Illuminate\Config\Repository;
 use GuzzleHttp\Exception\TransferException;
 use Illuminate\Contracts\Support\Arrayable;
 
+/**
+ * Telr Request
+ *
+ * @property string ivp_method
+ * @property string ivp_store
+ * @property string ivp_authkey
+ * @property string ivp_cart
+ * @property bool ivp_test
+ * @property float ivp_amount
+ * @property string ivp_currency
+ * @property string ivp_desc
+ * @property string ivp_lang
+ * @property string bill_email
+ * @property string bill_title
+ * @property string bill_fname
+ * @property string bill_sname
+ * @property string bill_addr1
+ * @property string bill_addr2
+ * @property string bill_addr3
+ * @property string bill_city
+ * @property string bill_region
+ * @property string bill_country
+ * @property string bill_zip
+ * @property string bill_custref
+ * @property string bill_phone
+ */
 abstract class TelrRequest extends Repository implements Arrayable
 {
     const IVP_INFO     = ['method', 'store', 'authkey', 'cart', 'test', 'amount', 'currency', 'desc', 'lang'];
