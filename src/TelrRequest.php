@@ -2,6 +2,7 @@
 
 namespace ArinaSystems\TelrLaravelPayment;
 
+use GuzzleHttp\Utils;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -65,7 +66,7 @@ abstract class TelrRequest extends Repository implements Arrayable
     {
         try {
             $response = (new Client())->post($this->endpoint, ['form_params' => $this->toArray()]);
-            $response = (array) \GuzzleHttp\json_decode($response->getBody()->getContents());
+            $response = (array) Utils::jsonDecode($response->getBody()->getContents());
             $response = (new TelrResponse($response));
         } catch (TransferException $th) {
             throw new \Exception($th->getMessage(), $th->getCode());
