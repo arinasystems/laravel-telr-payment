@@ -1,0 +1,55 @@
+{
+    "name": "arinasystems/laravel-telr-payment",
+    "description": "Laravel package for processing payments through Telr payment gateway.",
+    "keywords": [
+        "laravel",
+        "arinasystems",
+        "telr-payment"
+    ],
+    "homepage": "https://github.com/arinasystems/laravel-telr-payment",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Arina Systems",
+            "email": "info@arinasystems.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "laravel/framework": ">=5.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": ">=3.5",
+        "phpunit/phpunit": ">=4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArinaSystems\\TelrLaravelPayment\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ArinaSystems\\TelrLaravelPayment\\Tests\\": "src/Tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit src/Tests/",
+        "test-coverage": "./vendor/bin/phpunit src/Tests/ --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ArinaSystems\\TelrLaravelPayment\\Providers\\TelrLaravelPaymentServiceProvider"
+            ],
+            "aliases": {
+                "Telr": "ArinaSystems\\TelrLaravelPayment\\Facades\\Telr"
+            }
+        }
+    }
+}
