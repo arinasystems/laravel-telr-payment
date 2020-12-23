@@ -26,10 +26,9 @@ class TransactionRequestCreated
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Database\Eloquent\Model            $payable
-     * @param  \ArinaSystems\TelrLaravelPayment\CreateRequest $request
-     * @param  \ArinaSystems\TelrLaravelPayment\TelrResponse  $response
-     * @return void
+     * @param \Illuminate\Database\Eloquent\Model            $payable
+     * @param \ArinaSystems\TelrLaravelPayment\CreateRequest $request
+     * @param \ArinaSystems\TelrLaravelPayment\TelrResponse  $response
      */
     public function __construct(Model $payable, CreateRequest $request, TelrResponse $response)
     {

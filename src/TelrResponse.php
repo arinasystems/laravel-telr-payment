@@ -10,7 +10,7 @@ class TelrResponse extends Repository implements Arrayable
     /**
      * Create a new instance.
      *
-     * @return void
+     * @param array $response
      */
     public function __construct(array $response)
     {

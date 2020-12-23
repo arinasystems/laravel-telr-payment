@@ -45,7 +45,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ArinaSystems\\TelrLaravelPayment\\Providers\\TelrLaravelPaymentServiceProvider"
+                "ArinaSystems\\TelrLaravelPayment\\Providers\\TelrServiceProvider"
             ],
             "aliases": {
                 "Telr": "ArinaSystems\\TelrLaravelPayment\\Facades\\Telr"

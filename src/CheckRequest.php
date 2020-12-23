@@ -15,7 +15,6 @@ class CheckRequest extends TelrRequest
      * Create a new instance.
      *
      * @param \ArinaSystems\TelrLaravelPayment\Models\Transaction $transaction
-     * @return void
      */
     public function __construct(Transaction $transaction)
     {

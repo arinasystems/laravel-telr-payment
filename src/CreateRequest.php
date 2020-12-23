@@ -9,10 +9,9 @@ class CreateRequest extends TelrRequest
     /**
      * Create a new instance.
      *
-     * @param  float|array $amount
-     * @param  string      $description
-     * @param  array       $billing_info
-     * @return void
+     * @param float|array $amount
+     * @param string      $description
+     * @param array       $billing_info
      */
     public function __construct($amount, $description = null, array $billing_info = [])
     {

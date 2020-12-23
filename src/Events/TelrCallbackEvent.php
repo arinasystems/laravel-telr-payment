@@ -20,9 +20,8 @@ class TelrCallbackEvent
     /**
      * Create a new instance.
      *
-     * @param  \ArinaSystems\TelrLaravelPayment\Models\Transaction $transaction
-     * @param  \ArinaSystems\TelrLaravelPayment\TelrResponse       $response
-     * @return void
+     * @param \ArinaSystems\TelrLaravelPayment\Models\Transaction $transaction
+     * @param \ArinaSystems\TelrLaravelPayment\TelrResponse       $response
      */
     public function __construct(Transaction $transaction, TelrResponse $response)
     {

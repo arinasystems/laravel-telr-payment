@@ -16,8 +16,7 @@ abstract class TelrRequest extends Repository implements Arrayable
 
     /**
      * Create a new instance.
-     *
-     * @return void
+     * @param array $config
      */
     public function __construct(array $config)
     {
