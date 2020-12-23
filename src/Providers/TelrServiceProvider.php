@@ -27,7 +27,7 @@ class TelrServiceProvider extends ServiceProvider
      */
     protected function registerFacade()
     {
-        $this->app->singleton('telr-payment', function ($app) {
+        $this->app->singleton('telr-payment', function () {
             return new Telr();
         });
     }

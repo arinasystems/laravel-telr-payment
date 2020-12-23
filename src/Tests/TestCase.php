@@ -27,7 +27,7 @@ abstract class TestCase extends Orchestra
      *
      * @return array
      */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders()
     {
         return [
             TelrServiceProvider::class,
@@ -38,7 +38,7 @@ abstract class TestCase extends Orchestra
      * @param  $app
      * @return array
      */
-    protected function getPackageAliases($app)
+    protected function getPackageAliases()
     {
         return [
             'TelrLaravelPayment' => 'ArinaSystems\TelrLaravelPayment\Facades\TelrLaravelPayment',

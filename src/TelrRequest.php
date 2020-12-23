@@ -12,13 +12,19 @@ use Illuminate\Contracts\Support\Arrayable;
 /**
  * Telr Request
  *
+ * @property string endpoint
+ * @property string redirect_url
+ * @property string method
  * @property string ivp_method
  * @property string ivp_store
  * @property string ivp_authkey
+ * @property string cart
  * @property string ivp_cart
  * @property bool ivp_test
+ * @property float amount
  * @property float ivp_amount
  * @property string ivp_currency
+ * @property string desc
  * @property string ivp_desc
  * @property string ivp_lang
  * @property string bill_email
@@ -110,8 +116,8 @@ abstract class TelrRequest extends Repository implements Arrayable
     /**
      * Get the specified configuration value.
      *
-     * @param  array|string $key
-     * @param  mixed        $default
+     * @param  string  $key
+     * @param  mixed   $default
      * @return mixed
      */
     public function get($key, $default = null)
