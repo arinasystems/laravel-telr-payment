@@ -2,6 +2,7 @@
 
 namespace ArinaSystems\TelrLaravelPayment;
 
+use GuzzleHttp\Utils;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -9,6 +10,38 @@ use Illuminate\Config\Repository;
 use GuzzleHttp\Exception\TransferException;
 use Illuminate\Contracts\Support\Arrayable;
 
+/**
+ * Telr Request
+ *
+ * @property string endpoint
+ * @property string redirect_url
+ * @property string method
+ * @property string ivp_method
+ * @property string ivp_store
+ * @property string ivp_authkey
+ * @property string cart
+ * @property string ivp_cart
+ * @property bool ivp_test
+ * @property float amount
+ * @property float ivp_amount
+ * @property string ivp_currency
+ * @property string desc
+ * @property string ivp_desc
+ * @property string ivp_lang
+ * @property string bill_email
+ * @property string bill_title
+ * @property string bill_fname
+ * @property string bill_sname
+ * @property string bill_addr1
+ * @property string bill_addr2
+ * @property string bill_addr3
+ * @property string bill_city
+ * @property string bill_region
+ * @property string bill_country
+ * @property string bill_zip
+ * @property string bill_custref
+ * @property string bill_phone
+ */
 abstract class TelrRequest extends Repository implements Arrayable
 {
     const IVP_INFO     = ['method', 'store', 'authkey', 'cart', 'test', 'amount', 'currency', 'desc', 'lang'];
@@ -16,8 +49,7 @@ abstract class TelrRequest extends Repository implements Arrayable
 
     /**
      * Create a new instance.
-     *
-     * @return void
+     * @param array $config
      */
     public function __construct(array $config)
     {
@@ -34,7 +66,7 @@ abstract class TelrRequest extends Repository implements Arrayable
     {
         try {
             $response = (new Client())->post($this->endpoint, ['form_params' => $this->toArray()]);
-            $response = (array) \GuzzleHttp\json_decode($response->getBody()->getContents());
+            $response = (array) Utils::jsonDecode($response->getBody()->getContents());
             $response = (new TelrResponse($response));
         } catch (TransferException $th) {
             throw new \Exception($th->getMessage(), $th->getCode());
@@ -85,8 +117,8 @@ abstract class TelrRequest extends Repository implements Arrayable
     /**
      * Get the specified configuration value.
      *
-     * @param  array|string $key
-     * @param  mixed        $default
+     * @param  string  $key
+     * @param  mixed   $default
      * @return mixed
      */
     public function get($key, $default = null)

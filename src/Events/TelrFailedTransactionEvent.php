@@ -14,8 +14,7 @@ class TelrFailedTransactionEvent
     /**
      * Create a new instance.
      *
-     * @param  \ArinaSystems\TelrLaravelPayment\Models\Transaction $transaction
-     * @return void
+     * @param \ArinaSystems\TelrLaravelPayment\Models\Transaction $transaction
      */
     public function __construct(Transaction $transaction)
     {
