@@ -34,7 +34,7 @@ class Transaction extends Model
      * @var array
      */
     protected $fillable = [
-        'ref',
+        'order_id',
         'amount',
         'description',
         'payable_id',
