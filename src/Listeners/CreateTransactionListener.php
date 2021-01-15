@@ -16,7 +16,7 @@ class CreateTransactionListener
     public function handle(TransactionRequestCreated $event)
     {
         Transaction::create([
-            'ref'           => $event->request->ivp_cart,
+            'order_id'      => $event->request->ivp_cart,
             'payable_type'  => $event->payable->getMorphClass(),
             'payable_id'    => $event->payable->getKey(),
             'amount'        => $event->request->amount,

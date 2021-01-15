@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Transaction Model
  *
- * @property string $ref
+ * @property string $order_id
  * @property float $amount
  * @property string $description
  * @property int $payable_id
@@ -34,7 +34,7 @@ class Transaction extends Model
      * @var array
      */
     protected $fillable = [
-        'ref',
+        'order_id',
         'amount',
         'description',
         'payable_id',

@@ -42,7 +42,7 @@ class Telr
      */
     public function callback(Request $request)
     {
-        $transaction = Transaction::whereRef($request->ref)->firstOrFail();
+        $transaction = Transaction::where('order_id', $request->ref)->firstOrFail();
 
         $request = new CheckRequest($transaction);
 
